@@ -1,0 +1,2 @@
+# Police Light
+La polizia locale sta utilizzando un nuovo programma di controllo del sistema semaforico (Police Light). Non tutti hanno imparato la chiave di autenticazione, così la portano sempre con se. Sarà stata protetta in maniera corretta?
