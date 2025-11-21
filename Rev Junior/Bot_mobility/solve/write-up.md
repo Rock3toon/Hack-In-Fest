@@ -1,0 +1,8 @@
+Il programma legge un unsigned int da stdin e confronta questo valore con una variabile interna che viene calcolata con alcune operazioni aritmetiche/XOR. Se il confronto è vero, il programma apre /flag.txt e stampa la flag. Lo scopo è determinare quale valore inserire affinché il controllo dia successo.
+
+**Strumenti per solve:** (Ghidra o Ida)
+
+Nel main sono presenti alcune variabili inizializzate con valori costanti. Tra le operazioni rilevanti, dopo la lettura dell’input, il programma esegue due XOR su una variabile inizializzata con il valore 777 e poi somma il risultato a una variabile "x", inizialmente impostata a 0x53E0. Il confronto decisivo è if (x == input): solo in questo caso il programma apre /flag.txt e ne stampa il contenuto.
+È importante notare che una delle XOR calcola un valore che poi non viene usato per il controllo finale; la seconda XOR invece aggiorna la variabile che viene sommata a "x" e determina il valore finale con cui l’input è confrontato.
+
+Partendo dai valori presenti nel binario, la variabile iniziale 777 viene sottoposta a un XOR con un valore costante, producendo un nuovo valore. Questo nuovo valore viene aggiunto a "x" (che vale inizialmente 0x53E0), ottenendo il valore finale con cui viene confrontato l’input. Il risultato numerico di questa somma è *64286* in decimale. Quindi il programma passerà al ramo che stampa la flag solo se l’input fornito è esattamente **64286**.

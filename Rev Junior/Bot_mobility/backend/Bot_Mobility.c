@@ -30,7 +30,7 @@ int main() {
     code_2 = code_1^ 0xabcd;
     control = control + code_2;
     if (control == input){
-        flag = fopen("../flag.txt", "r");
+        flag = fopen("flag.txt", "r");
         if (flag == NULL) {
             printf("Errore nell'apertura del file flag.txt\n");
             return 1;
