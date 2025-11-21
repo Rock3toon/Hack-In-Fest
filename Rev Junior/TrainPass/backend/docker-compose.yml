@@ -1,0 +1,16 @@
+services:
+  train_pass:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8015:1002"
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp
+      - /var/tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
